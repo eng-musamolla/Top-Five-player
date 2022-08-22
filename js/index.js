@@ -2,7 +2,7 @@
 
 // Calculation
 document.getElementById("calculate").addEventListener("click", function () { 
-    const inputValue = getElementValueById();
+    const inputValue = getElementValueById("perPlayer", "Per Player");
     
     const expenses = document.getElementById("playerExpenses");
     const expensesInt = parseInt(expenses.innerText);
@@ -12,16 +12,11 @@ document.getElementById("calculate").addEventListener("click", function () {
 });
 
 
-
-
-
-
-
 // Calculation Total Expenses
 
 document.getElementById("calculateTotal").addEventListener("click", function () { 
-    const managerValue = manager();
-    const coachValue = coach();
+    const managerValue = getElementValueById("manager", "Manager");
+    const coachValue = getElementValueById("coach", "Coach");
     
     const expenses = document.getElementById("playerExpenses");
     const expensesInt = parseInt(expenses.innerText);
