@@ -152,7 +152,7 @@
             <div class="bg-gray-700 rounded p-8 border-solid border-2 border-sky-700 bg-gray-700 text-white">
                 <h3 class="text-4xl text-center text-orange-400 pb-5 font-bold">Selected - V</h3>
                 <div class="listOfSelectedPlayer">
-                    <ol class="list-decimal text-xl pl-5">
+                    <ol id="orderdList" class="list-decimal text-xl pl-5">
                         <li>Coffee</li>
                         <li>Tea</li>
                         <li>Milk</li>
@@ -164,36 +164,37 @@
                 <h3 class="text-4xl text-center text-orange-400 pb-5 font-bold">Budget</h3>
                 <div class="flex gap-2 justify-between text-lg py-4">
                     <p class="w-2/6">Per Player</p>
-                    <input class="w-4/6 rounded border-2 border-solid border-sky-700 text-black" type="text"
-                        placeholder=" $1000">
+                    <input id="perPlayer" class="w-4/6 rounded border-2 border-solid border-sky-700 text-black"
+                        type="text" placeholder=" $1000">
                 </div>
 
-                <button class="hover:bg-fuchsia-600 rounded px-16 py-2 text-lg bg-cyan-600 my-5 ml-5"
+                <button id="calculate" class="hover:bg-fuchsia-600 rounded px-16 py-2 text-lg bg-cyan-600 my-5 ml-5"
                     type="submit">Calculate</button>
 
                 <div class="flex gap-2 justify-between text-lg py-4 font-bold">
                     <h4>Player Expenses</h4>
-                    <h4>$<span>5000</span></h4>
+                    <h4>$<span id="playerExpenses">5000</span></h4>
                 </div>
 
                 <div class="flex gap-2 justify-between text-lg py-4">
                     <p class="w-2/6">Manager</p>
-                    <input class="w-4/6 rounded border-2 border-solid border-sky-700 text-black" type="text"
-                        placeholder=" $2000">
+                    <input id="manager" class="w-4/6 rounded border-2 border-solid border-sky-700 text-black"
+                        type="text" placeholder=" $2000">
                 </div>
 
                 <div class="flex gap-2 justify-between text-lg py-4">
                     <p class="w-2/6">Coach</p>
-                    <input class="w-4/6 rounded border-2 border-solid border-sky-700 text-black" type="text"
+                    <input id="coach" class="w-4/6 rounded border-2 border-solid border-sky-700 text-black" type="text"
                         placeholder=" $4000">
                 </div>
 
-                <button class=" text-center hover:bg-fuchsia-600 rounded px-16 py-2 text-lg bg-cyan-600 my-5"
+                <button id="calculateTotal"
+                    class=" text-center hover:bg-fuchsia-600 rounded px-16 py-2 text-lg bg-cyan-600 my-5"
                     type="submit">Calculate Total</button>
 
                 <div class="flex gap-2 justify-between text-xl font-bold pt-1">
-                    <h4>Coach</h4>
-                    <h4 class="text-orange-400">$<span>11000</span></h4>
+                    <h4>Total</h4>
+                    <h4 class="text-orange-400">$<span id="total">11000</span></h4>
                 </div>
 
             </div>
@@ -203,7 +204,8 @@
         </aside>
         <!-- Right side part End -->
     </section>
-
+    <script src="/js/utilities.js"></script>
+    <script src="/js/index.js"></script>
 </body>
 <!-- fotter part  -->
 <footer class="mt-20">
