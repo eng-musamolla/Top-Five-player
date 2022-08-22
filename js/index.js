@@ -20,15 +20,15 @@ document.getElementById("calculate").addEventListener("click", function () {
 // Calculation Total Expenses
 
 document.getElementById("calculateTotal").addEventListener("click", function () { 
-    const ger = manager();
-    const coac = coach();
+    const managerValue = manager();
+    const coachValue = coach();
     
     const expenses = document.getElementById("playerExpenses");
     const expensesInt = parseInt(expenses.innerText);
     const total = document.getElementById("total");
-    const totalfinal = (ger + coac + expensesInt);  
+    const totalfinal = (managerValue + coachValue + expensesInt);  
 
-    if  (!isNaN(ger) && !isNaN(coac) && !isNaN(expensesInt)) {
+    if  (!isNaN(managerValue) && !isNaN(coachValue) && !isNaN(expensesInt)) {
         total.innerText = totalfinal;
     }    
 });
