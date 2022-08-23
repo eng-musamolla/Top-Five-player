@@ -6,28 +6,33 @@ document.getElementById('playerButton').addEventListener('click', function (even
     const playercount = players.childElementCount;
     
     
+    
     if (player === 'SELECT') { 
-        
+        const playername = event.target.parentElement.children[1].innerText;    
+        const listItems = players.getElementsByTagName('li');
+                
+        // Loop through the NodeList object.
+        for (let i = 0; i <= listItems.length - 1; i++) {
+            let element = listItems[i];
+            if (element.innerText === playername) {
+                alert('This player already selected');
+                return;
+            }
+        }
+
         if (playercount < 5) {
-            
-            // const playername = event.target.parentelement.children[1].innerText;
+
             const playerad = document.createElement('li');
-            playerad.innerText = player;
+            playerad.innerText = playername;
             players.appendChild(playerad);
-            
-            alert("Please select a player");
             return;
 
         } else {
             
             alert("You can only select up to 5 players");
-            // playerButton.setAttribute('disabled');
-            // playerButton.style.backgroundColor = '#ccc';
             return;
-
         }      
     }      
-    
     
  });
 
