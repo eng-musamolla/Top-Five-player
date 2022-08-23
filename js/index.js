@@ -5,8 +5,6 @@ document.getElementById('playerButton').addEventListener('click', function (even
     const players = document.getElementById("orderdList");
     const playercount = players.childElementCount;
     
-    
-    
     if (player === 'SELECT') { 
         const playername = event.target.parentElement.children[1].innerText;    
         const listItems = players.getElementsByTagName('li');
@@ -25,8 +23,10 @@ document.getElementById('playerButton').addEventListener('click', function (even
             const playerad = document.createElement('li');
             playerad.innerText = playername;
             players.appendChild(playerad);
+            const button = event.target;
+            button.innerText = 'SELECTED';
+            button.style.backgroundColor = '#495869';
             return;
-
         } else {
             
             alert("You can only select up to 5 players");
