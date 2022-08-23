@@ -5,21 +5,13 @@ document.getElementById('playerButton').addEventListener('click', function (even
     const players = document.getElementById("orderdList");
     const playercount = players.childElementCount;
     
-    if (player === 'SELECT') { 
+    if (player === 'SELECTED') {
+        alert('This player already selected');
+        return;
+    } else if (player === 'SELECT') { 
         const playername = event.target.parentElement.children[1].innerText;    
         const listItems = players.getElementsByTagName('li');
-                
-        // Loop through the NodeList object.
-        for (let i = 0; i <= listItems.length - 1; i++) {
-            let element = listItems[i];
-            if (element.innerText === playername) {
-                alert('This player already selected');
-                return;
-            }
-        }
-
         if (playercount < 5) {
-
             const playerad = document.createElement('li');
             playerad.innerText = playername;
             players.appendChild(playerad);
@@ -27,8 +19,7 @@ document.getElementById('playerButton').addEventListener('click', function (even
             button.innerText = 'SELECTED';
             button.style.backgroundColor = '#495869';
             return;
-        } else {
-            
+        } else {         
             alert("You can only select up to 5 players");
             return;
         }      
