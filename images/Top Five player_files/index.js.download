@@ -2,27 +2,22 @@
 
 document.getElementById('playerButton').addEventListener('click', function (event) {
     const player = event.target.innerText;
-    const players = document.getElementById("orderdList");
-    const playercount = players.childElementCount;
-    
-    
+    const players = document.getElementById("orderdList").childElementCount;
+    const playerButton = document.getElementById('playerButton').getElementsByTagName('button');
+    const playername = event.target.document.getElementById('player-card').getElementsByTagName('h3').innerText;
+   
     if (player === 'SELECT') { 
         
-        if (playercount < 5) {
-            
-            // const playername = event.target.parentelement.children[1].innerText;
-            const playerad = document.createElement('li');
-            playerad.innerText = player;
-            players.appendChild(playerad);
-            
-            alert("Please select a player");
+        if (players < 5) {
+            alert(" 5 players"); 
             return;
+
+
 
         } else {
             
             alert("You can only select up to 5 players");
-            // playerButton.setAttribute('disabled');
-            // playerButton.style.backgroundColor = '#ccc';
+            playerButton.setAttribute('disabled');
             return;
 
         }      
